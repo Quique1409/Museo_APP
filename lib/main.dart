@@ -27,6 +27,10 @@ class MyApp extends StatelessWidget {
 class MyAppState extends ChangeNotifier {
 }
 
+void museoAdd(){
+
+}
+
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -41,7 +45,7 @@ class MyHomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             Center(child: Text("Ubicación")),
-            Center(child: Text("Favoritos")),
+            FavoritesPage(), //Pagina de favoritos
             Center(child: Text("perfil")),
           ],
         ),
@@ -55,6 +59,20 @@ class MyHomePage extends StatelessWidget {
           unselectedLabelColor: Colors.grey,
         ),
       ),
+    );
+  }
+}
+
+class FavoritesPage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    //Se implementa el boton para dar acción a agregar museo
+    return IconButton(
+      icon: Icon(Icons.add_circle_outline_outlined),
+      onPressed: (){
+        //Acción que va a ejecutar al presionar el boton
+        print('Boton presionado');
+      },
     );
   }
 }
