@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
         title: 'Mi Museo',
         theme: ThemeData(
           useMaterial3: true,
-          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF615145)), //despues de la FF
+          colorScheme: ColorScheme.fromSeed(seedColor: Color(0xFF54787d)), //despues de la FF
         ),
         home: MyHomePage(),
       ),
