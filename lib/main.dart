@@ -32,19 +32,27 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
 
     //Se crea una barra de opciones
-    return MaterialApp(
-      home: DefaultTabController(
-        length: 3,
-        child: Scaffold(
-          appBar: AppBar(
-            bottom: const TabBar(
-              tabs: [
-                Tab(icon: Icon(Icons.location_on_outlined)),
-                Tab(icon: Icon(Icons.bookmark_border_outlined)),
-                Tab(icon: Icon(Icons.person_outline_outlined)),
-              ],
-              ),
-          ),
+    return DefaultTabController(
+      length: 3,
+      child: Scaffold(
+        appBar: AppBar(
+          title: Text("Mi museo"),
+        ),
+        body: TabBarView(
+          children: [
+            Center(child: Text("Ubicación")),
+            Center(child: Text("Favoritos")),
+            Center(child: Text("perfil")),
+          ],
+        ),
+        bottomNavigationBar: TabBar(
+          tabs: [
+            Tab(icon: Icon(Icons.location_on_outlined)),
+            Tab(icon: Icon(Icons.bookmark_border_outlined)),
+            Tab(icon: Icon(Icons.person_outline_outlined)),
+          ],
+          labelColor: Theme.of(context).colorScheme.primary,
+          unselectedLabelColor: Colors.grey,
         ),
       ),
     );
